@@ -61,6 +61,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/pwa',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -83,4 +84,16 @@ export default {
   },
   // ローディング
   loading: '~/components/Loading.vue',
+
+  // pwa設定
+  pwa: {
+    icon: {
+      source: './static/apple-touch-icon.png',
+      fileName: 'apple-touch-icon.png',
+    },
+    meta: {
+      mobileApp: true,
+      mobileAppIOS: true,
+    },
+  },
 }
