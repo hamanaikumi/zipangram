@@ -76,8 +76,6 @@ export default Vue.extend({
       }
     }
 
-    console.log(this.myFollowLists)
-
     // 他人のフォロー・フォロワー一覧画面の時の初期表示
     if (this.statusId === 3 || this.statusId === 4) {
       if (this.myUserId === this.followUserId) {
