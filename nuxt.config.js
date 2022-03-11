@@ -1,4 +1,3 @@
-import TerserPlugin from 'terser-webpack-plugin'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -39,9 +38,9 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
-  // Netlify デプロイのため
+  // vercelデプロイ用
   ssr: true,
-  target: 'static',
+  target: 'server',
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -62,6 +61,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/pwa',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -81,20 +81,19 @@ export default {
   build: {
     transpile: ['amCharts'],
     vendor: ['vue-cropperjs'],
-    optimization: {
-      minimize: true,
-      minimizer: [
-        new TerserPlugin({
-          cache: true,
-          parallel: false,
-        }),
-      ],
-    },
   },
   // ローディング
   loading: '~/components/Loading.vue',
-  // :idのリロード問題
-    generate: {
-    fallback: true
+
+  // pwa設定
+  pwa: {
+    icon: {
+      source: './static/apple-touch-icon.png',
+      fileName: 'apple-touch-icon.png',
+    },
+    meta: {
+      mobileApp: true,
+      mobileAppIOS: true,
+    },
   },
 }
