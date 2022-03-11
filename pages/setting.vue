@@ -19,7 +19,7 @@
         /></span>
       </label>
     </div>
-    <!-- input -->
+    <!-- profile -->
     <div class="grid grid-cols-3 gap-2 border-t border-light-gray px-3 pt-8">
       <div class="col-span-1 py-2">User Name</div>
       <div
@@ -49,31 +49,13 @@
     <div class="mt-1 mx-4 pb-8">
       <p class="text-right text-input-value-color">{{ bio.length }}/30</p>
     </div>
-    <!-- button -->
     <div class="px-4 pb-4 text-center mt-2">
-      <button
-        type="button"
-        class="inline-flex justify-center py-2 px-4 text-xl text-dark-gray font-semibold"
-        @click="cancel"
-      >
-        Cancel
-      </button>
-      <button
-        class="inline-flex justify-center py-2 px-4 text-xl text-accent-color font-semibold"
-        type="button"
-        @click="updateUserInfo"
-      >
-        Done
-      </button>
+      <GrayButton name="Cancel" @emit="cancel" />
+      <GreenButton name="Done" @emit="updateUserInfo" />
     </div>
     <!-- logout -->
     <div class="grid justify-items-center border-t border-light-gray py-8">
-      <button
-        class="inline-flex justify-center py-2 px-4 text-xl text-warning-color font-semibold"
-        @click="logout"
-      >
-        Log out
-      </button>
+      <RedButton name="Log out" @emit="logout" />
     </div>
   </div>
 </template>
