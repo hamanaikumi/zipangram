@@ -39,7 +39,7 @@ export default {
   css: [],
 
   // vercelデプロイ用
-  ssr: true,
+  ssr: false,
   target: 'server',
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
