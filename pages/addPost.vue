@@ -53,7 +53,7 @@
                   :view-mode="1"
                   drag-mode="crop"
                   :auto-crop-area="1"
-                  :background="true"
+                  :background="false"
                   :rotatable="true"
                   :src="selectedImage"
                   alt="Source Image"
@@ -67,20 +67,8 @@
                   </button>
                 </div>
                 <div>
-                  <button
-                    class="inline-flex justify-center py-2 px-4 text-xl text-dark-gray font-semibold"
-                    type="button"
-                    @click="hideImageModal"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    class="inline-flex justify-center py-2 px-4 text-xl text-accent-color font-semibold"
-                    type="button"
-                    @click="cropImage"
-                  >
-                    Add
-                  </button>
+                  <GrayButton name=" Cancel" @emit="hideImageModal" />
+                  <GreenButton name="Add" @emit="cropImage" />
                 </div>
               </div>
             </modal>
@@ -170,20 +158,8 @@
               <div class="modal-body my-4 flex flex-col">
                 <SelectPrefecture @givePrefecture="catchPrefecture" />
                 <div class="mt-4">
-                  <button
-                    class="inline-flex justify-center py-2 px-4 text-xl text-dark-gray font-semibold"
-                    type="button"
-                    @click="hidePrefectureModal"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    class="inline-flex justify-center py-2 px-4 text-xl text-accent-color font-semibold"
-                    type="button"
-                    @click="addPrefecture"
-                  >
-                    Add
-                  </button>
+                  <GrayButton name=" Cancel" @emit="hidePrefectureModal" />
+                  <GreenButton name="Add" @emit="addPrefecture" />
                 </div>
               </div>
             </modal>
