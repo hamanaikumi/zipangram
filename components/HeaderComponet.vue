@@ -58,7 +58,7 @@
           <i class="fas fa-chevron-left"></i>
         </button>
       </div>
-      <div class="text-right flex items-center justify-between w-2/12">
+      <div class="text-right flex items-center justify-between w-[23%]">
         <!-- 投稿アイコン -->
         <nuxt-link
           v-if="
@@ -73,11 +73,11 @@
           "
           to="/addPost"
         >
-          <i class="far fa-plus-square fa-lg fa-fw"></i>
+          <i class="far fa-plus-square text-[25px] fa-fw"></i>
         </nuxt-link>
         <!-- 通知アイコン -->
         <nuxt-link
-          v-if="$route.path === '/home' || $route.path === '/search'"
+          v-if="$route.path === '/home' || $route.path === '/search'||$route.path.includes('/postDetail')"
           to="/activity"
           class="relative"
         >
@@ -92,7 +92,7 @@
               ●
             </p>
           </div>
-          <i class="far fa-heart fa-lg fa-fw"></i>
+          <i class="far fa-heart text-[25px] fa-fw"></i>
         </nuxt-link>
         <!-- 設定アイコン -->
         <nuxt-link
@@ -106,7 +106,7 @@
           "
           to="/setting"
         >
-          <i class="fas fa-cog fa-lg fa-fw"></i>
+          <i class="fas fa-cog text-[25px] fa-fw"></i>
         </nuxt-link>
       </div>
     </div>

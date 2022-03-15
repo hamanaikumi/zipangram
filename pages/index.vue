@@ -47,11 +47,11 @@
 
     <div class="border-t text-center mt-12">
       <div class="mt-12 text-lg">Don&rsquo;t have an account ?</div>
-      <router-link to="/Signup">
+      <nuxt-link to="/signup">
         <div class="py-2 px-4 text-xl text-accent-color font-semibold">
           Sign Up
         </div>
-      </router-link>
+      </nuxt-link>
     </div>
   </div>
 </template>

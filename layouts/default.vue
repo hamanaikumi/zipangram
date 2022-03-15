@@ -29,11 +29,15 @@ export default Vue.extend({
   },
   methods: {
     /**
-     * 通知を受け取って、一番最新の通知をすでに確認済みかどうかをヘッダーに渡す（通知アイコンが表示されるホームと検索画面のみ）.
+     * 通知を受け取って、一番最新の通知をすでに確認済みかどうかをヘッダーに渡す（通知アイコンが表示されるホームと検索画面と投稿詳細のみ）.
      */
     async getNotice() {
       const userId = this.$store.getters['user/getLoginUserId']
-      if (this.$route.path === '/home' || this.$route.path === '/search') {
+      if (
+        this.$route.path === '/home' ||
+        this.$route.path === '/search' ||
+        this.$route.path.includes('/postDetail')
+      ) {
         const res = await this.$axios.get(
           `https://api-instagram-app.herokuapp.com/notice/${userId}`
         )
